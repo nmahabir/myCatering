@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import * as ROUTES from '../../utils/FirebaseRoutes';
 // const Nav = () => (
 //   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -61,3 +62,26 @@ const Nav = props => (
 );
 
 export default Nav;
+
+// const Nav = props => (
+//   <nav className="navbar navbar-dark bg-primary">
+//         <ul>
+//       <li>
+//         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+//       </li>
+//       <li>
+//         <Link to={ROUTES.LANDING}>Landing</Link>
+//       </li>
+//       <li>
+//         <Link to={ROUTES.HOME}>Home</Link>
+//       </li>
+//       <li>
+//         <Link to={ROUTES.ACCOUNT}>Account</Link>
+//       </li>
+//       <li>
+//         <Link to={ROUTES.ADMIN}>Admin</Link>
+//       </li>
+    
+//     </ul>
+//   </nav>
+// );
