@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as ROUTES from '../../utils/FirebaseRoutes';
 // const Nav = () => (
 //   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 //     <a className="navbar-brand" href="/">
@@ -9,53 +9,55 @@ import React from "react";
 //   </nav>
 // );
 const Nav = props => (
-  <ul className="nav nav-tabs">
-    <li className="nav-item">
-      <a className="nav-link active" href="#">
-        Home
-      </a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link disabled" href="#">
-        My Catering
-      </a>
-    </li>
-    <li className="nav-item dropdown justify-content-right">
-      <a
-        className="nav-link dropdown-toggle"
-        data-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Menu
-      </a>
-      <div className="dropdown-menu">
-        <a className="dropdown-item" href="#">
-          About your Cook!
+  <nav className="navbar navbar-dark bg-primary">
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <a className="nav-link active" href={ROUTES.HOME}>
+          Home
         </a>
-        <a className="dropdown-item" href="#">
-          Place Order
+      </li>
+      <li className="nav-item justify-content-center">
+        <a className="nav-link disabled" href="/">
+          My Catering
         </a>
-        <a className="dropdown-item" href="#">
-          Specials
+      </li>
+      <li className="nav-item dropdown justify-content-right">
+        <a
+          className="nav-link dropdown-toggle"
+          data-toggle="dropdown"
+          href="/"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Menu
         </a>
-        <a className="dropdown-item" href="#">
-          Recipes
+        <div className="dropdown-menu">
+          <a className="dropdown-item" href="/">
+            About your Cook!
+          </a>
+          <a className="dropdown-item" href="/">
+            Place Order
+          </a>
+          <a className="dropdown-item" href="/">
+            Specials
+          </a>
+          <a className="dropdown-item" href="/">
+            Recipes
+          </a>
+          <div className="dropdown-divider" />
+          <a className="dropdown-item" href="/">
+            All Dishes
+          </a>
+        </div>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/">
+          Link
         </a>
-        <div className="dropdown-divider" />
-        <a className="dropdown-item" href="#">
-          All Dishes
-        </a>
-      </div>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#">
-        Link
-      </a>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </nav>
 );
 
 export default Nav;
