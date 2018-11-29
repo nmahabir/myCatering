@@ -1,5 +1,6 @@
 import app from "firebase/app";
 import "firebase/auth";
+import "firebase/storage";
 
 const config = {
   apiKey: process.env.REACT_APP_Firebase_apiKey,
@@ -9,6 +10,8 @@ const config = {
   storageBucket: process.env.REACT_APP_Firebase_storageBucket,
   messagingSenderId: process.env.REACT_APP_Firebase_messagingSenderId
 };
+
+const storage = app.storage()
 
 class Firebase {
   constructor() {
@@ -30,4 +33,4 @@ class Firebase {
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 }
 
-export default Firebase;
+export {Firebase, storage as default}

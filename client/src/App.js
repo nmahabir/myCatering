@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import logo from './logo.svg';
 import './App.css';
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
+import Firebase from "./components/Firebase";
 
 class App extends Component {
   render() {

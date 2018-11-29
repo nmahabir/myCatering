@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../logo.png";
 
 const Jumbotron = ({ children }) => (
   <div
@@ -6,6 +7,7 @@ const Jumbotron = ({ children }) => (
     className="jumbotron"
   >
     {children}
+    <img src={logo} className="App-logo" alt="logo" />
   </div>
 );
 

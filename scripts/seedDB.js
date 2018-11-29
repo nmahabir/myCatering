@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the Dishes collection and inserts the dishes below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
