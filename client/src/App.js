@@ -6,6 +6,7 @@ import Jumbotron from "./components/Jumbotron";
 import { Firebase, storage, FirebaseContext } from "./components/Firebase";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/SignUp" component={SignUp} />
+        <Route exact path="/SignIn" component={SignIn} />
         </Switch>        
         </div>
       </Router>

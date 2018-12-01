@@ -1,70 +1,82 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
-import Firebase from "../../components/Firebase";
-// import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+// import * as ROUTES from "/routes";
+// import { FirebaseContext } from '../Firebase';
+
+const INITIAL_STATE = {
+  email: "",
+  passwordOne: "",
+  error: null
+};
 
 class SignIn extends Component {
-  state = {
-    foodImage: []
-  };
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    this.loadHome();
+    this.state = { ...INITIAL_STATE };
   }
 
-  loadHome = () => {};
+  onSubmit = event => {
+    const { email, passwordOne } = this.state;
 
-  handleLoadHome = event => {
-    const arrayOfImages = event.target;
-    this.setState({
-      foodImage: arrayOfImages
-    });
+    this.props.firebase
+      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+        this.setState({ ...INITIAL_STATE });
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+
+    event.preventDefault();
+  };
+
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
+    const { email, passwordOne, error } = this.state;
+    const isInvalid = passwordOne === "" || email === "";
+
     return (
-      <Container fluid>
-        <Row>
-          <Jumbotron>
-            <h1>Welcome to My Catering!</h1>
-          </Jumbotron>
-          <Col size="md-6">
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="summary"
-                placeholder="Order Details"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Order
-              </FormBtn>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+      <form style={{ padding: "50px" }} onSubmit={this.onSubmit}>
+        <br />
+        <div className="form-group">
+          <label htmlFor="email">Email: </label>
+          <br />
+          <input
+            style={{ paddingLeft: "33%", paddingRight: "33%" }}
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Email Address"
+          />
+        </div>
+        <br />
+        <div className="form-group">
+          <label htmlFor="passwordOne">Password: </label>
+          <br />
+          <input
+            style={{ paddingLeft: "33%", paddingRight: "33%" }}
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <br />
+        <button disabled={isInvalid} type="submit">
+          Proceed to Home Page!
+        </button>
+
+        {error && <p>{error.message}</p>}
+      </form>
     );
   }
 }
+
 
 export default SignIn;
