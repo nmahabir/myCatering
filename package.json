@@ -4,14 +4,14 @@
   "private": true,
   "main": "server.js",
   "dependencies": {
-    "firebase": "^5.5.9",
-    "react": "^16.6.2",
-    "react-dom": "^16.6.2",
-    "react-scripts": "2.1.1",    
     "axios": "^0.16.2",
     "express": "^4.16.3",
+    "firebase": "^5.5.9",
+    "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-    "if-env": "^1.0.4"
+    "react": "^16.6.2",
+    "react-dom": "^16.6.2",
+    "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -23,7 +23,6 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  
   "author": "",
   "license": "ISC",
   "devDependencies": {
