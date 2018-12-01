@@ -50,21 +50,16 @@ class SignIn extends Component {
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="summary"
+                placeholder="Order Details"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Order
               </FormBtn>
             </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            {/* <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron> */}
           </Col>
         </Row>
       </Container>
