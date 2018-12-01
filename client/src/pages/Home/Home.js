@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import Firebase from "../../components/Firebase";
-// import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import images from "../../images.json";
 import Card from "../../components/Card";
@@ -38,7 +35,7 @@ class Home extends Component {
           </Row>
           <Row>
           {this.state.images.map(entry => (
-            <Card id={entry.id} image={entry.image} />
+            <Card id={entry.id} image={entry.image} name={entry.name}/>
           ))}
           </Row>
 

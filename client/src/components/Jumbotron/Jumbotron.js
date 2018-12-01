@@ -2,15 +2,15 @@ import React from "react";
 import logo from "../../logo.png";
 
 const Jumbotron = ({ children }) => (
-  
   <div
-    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
-    className="jumbotron"
+    style={{ width: "100%" }}
+    className="jumbotron jumbotron-fluid"
   >
-  <img src={logo} className="App-logo" alt="logo" />
-    {children}
-    
+    <img src={logo} className="App-logo" alt="logo" />
+    <div style={{textAlign: "center"}}>{children}</div>
   </div>
 );
 
 export default Jumbotron;
+
+ 

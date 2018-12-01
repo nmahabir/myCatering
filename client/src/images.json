@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Arepas-2",
+      "name": "Arepas",
       "image": "../sampleImages/Arepas-2.jpg",
       "selected": false
     },
@@ -31,7 +31,7 @@
     },
     {
       "id": 6,
-      "name": "Stuffed Mushrooms-2",
+      "name": "Stuffed Mushrooms",
       "image": "../sampleImages/StuffedMushrooms-2.jpg",
       "selected": false      
     }
