@@ -67,4 +67,4 @@ class SignIn extends Component {
   }
 }
 
-export default Home;
+export default SignIn;

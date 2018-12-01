@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import * as ROUTES from "/routes";
-import { FirebaseContext } from '../Firebase';
+// import * as ROUTES from "/routes";
+// import { FirebaseContext } from '../Firebase';
 
-const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
-    <FirebaseContext.Consumer>
-      {firebase => <SignUp firebase={firebase} />}
-    </FirebaseContext.Consumer>
-  </div>
-);
+// const SignUpPage = () => (
+//   <div>
+//     <h1>SignUp</h1>
+//     <FirebaseContext.Consumer>
+//       {firebase => <SignUp firebase={firebase} />}
+//     </FirebaseContext.Consumer>
+//   </div>
+// );
 
 const INITIAL_STATE = {
   username: "",
@@ -54,37 +54,58 @@ class SignUp extends Component {
       email === "" ||
       username === "";
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <form style={{padding: '50px'}} onSubmit={this.onSubmit}>
+      <div className="form-group">
+      <label htmlFor="username">Name: </label>
+      <br/>
+        <input  style={{paddingLeft: '33%', paddingRight: '33%'}}
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        </div>
+        <br/>
+        <div className="form-group">
+        <label htmlFor="email">Email: </label>
+        <br/>
+        <input  style={{paddingLeft: '33%', paddingRight: '33%'}}
+        
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        </div>
+        <br/>
+        <div className="form-group">
+        <label htmlFor="passwordOne">Password: </label>
+        <br/>
+        <input  style={{paddingLeft: '33%', paddingRight: '33%'}}
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        </div>
+        <br/>
+        <div className="form-group">
+        <label htmlFor="passwordOne">Confirm Password: </label>
+        <br/>
+        <input  style={{paddingLeft: '33%', paddingRight: '33%'}}
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
+        </div>
+        <br/>
         <button disabled={isInvalid} type="submit">
-          Sign Up
+        Join us!
         </button>
 
         {error && <p>{error.message}</p>}
@@ -93,8 +114,10 @@ class SignUp extends Component {
   }
 }
 
-const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
-);
+// const SignUpLink = () => (
+//   <p>
+//     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+//   </p>
+// );
+
+export default SignUp;

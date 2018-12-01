@@ -29,9 +29,6 @@ class Home extends Component {
     return (
       <Container fluid>
         <Row>
-          <Jumbotron>
-            <h3>Welcome to My Catering!</h3>
-          </Jumbotron>
           </Row>
           <Row>
           {this.state.images.map(entry => (
