@@ -5,7 +5,7 @@ const dishesSchema = new Schema({
   title: { type: String, required: true },
   mealType: { type: Array, required: true },
   price: { type: Object, required: true },
-  reciple: { type: Array, default: Date.now }
+  recipe: { type: Array, default: Date.now }
 });
 
 const Dishes = mongoose.model("Dishes", dishesSchema);

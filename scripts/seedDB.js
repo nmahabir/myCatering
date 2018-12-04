@@ -5,10 +5,10 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/catering"
+  "mongodb://localhost/mycatering"
 );
 
-const dishes = [
+const dishesSeed = [
   {
     title: "Pastelles",
     mealType: ["snack", "lunch", "dinner"],
@@ -110,7 +110,7 @@ const dishes = [
   }
 ];
 
-const users = [
+const usersSeed = [
   {
     name : "Maria Test",
     currentOrder: [{}],
@@ -131,7 +131,7 @@ const users = [
 
 db.MyCatering
   .remove({})
-  .then(() => db.MyCatering.collection.insertMany(dishes))
+  .then(() => db.MyCatering.collection.insertMany(dishesSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -144,7 +144,7 @@ db.MyCatering
   
 db.MyCatering
 .remove({})
-.then(() => db.MyCatering.collection.insertMany(users))
+.then(() => db.MyCatering.collection.insertMany(usersSeed))
 .then(data => {
   console.log(data.result.n + " records inserted!");
   process.exit(0);

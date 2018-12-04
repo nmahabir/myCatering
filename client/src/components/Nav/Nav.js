@@ -27,26 +27,31 @@ const Nav = props => (
           Menu
         </a>
         <div className="dropdown-menu">
-          <a className="dropdown-item" href="/">
+          <a className="dropdown-item" href="/About">
             About your Cook!
           </a>
-          <a className="dropdown-item" href="/">
+          <a className="dropdown-item" href="PlaceOrder">
             Place Order
           </a>
-          <a className="dropdown-item" href="/">
+          <a className="dropdown-item" href="Specials">
             Specials
           </a>
-          <a className="dropdown-item" href="/">
+          <a className="dropdown-item" href="Recipes">
             Recipes
           </a>
           <div className="dropdown-divider" />
-          <a className="dropdown-item" href="/">
+          <a className="dropdown-item" href="/AllDishes">
             All Dishes
           </a>
         </div>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">
+        <a className="nav-link" href="/signIn">
+          Sign In
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/signOut">
           Sign Out
         </a>
       </li>

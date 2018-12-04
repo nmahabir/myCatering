@@ -1,3 +1,3 @@
 module.exports = {
-  Resource: require('./resource') // ModelName: model location being exported for shorthand referencing
+  apiRoutes: require('./ApiRoute') // ModelName: model location being exported for shorthand referencing
 };

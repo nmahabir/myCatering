@@ -10,7 +10,7 @@ import SignIn from "./pages/SignIn";
 
 class App extends Component {
   render() {
-    console.log(storage)
+    // console.log(storage)
     return (
       <Router>
         <div>
