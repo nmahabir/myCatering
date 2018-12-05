@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("./models");
 
-// This file empties the Dishes collection and inserts the dishes below
+// This file empties the Dishes and Users collection and inserts the dishes below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
@@ -129,9 +129,9 @@ const usersSeed = [
   }
 ]
 
-db.MyCatering
+db.Dishes
   .remove({})
-  .then(() => db.MyCatering.collection.insertMany(dishesSeed))
+  .then(() => db.Dishes.collection.insertMany(dishesSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -142,9 +142,9 @@ db.MyCatering
   });
 
   
-db.MyCatering
+db.Users
 .remove({})
-.then(() => db.MyCatering.collection.insertMany(usersSeed))
+.then(() => db.Users.collection.insertMany(usersSeed))
 .then(data => {
   console.log(data.result.n + " records inserted!");
   process.exit(0);
